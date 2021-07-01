@@ -28,21 +28,21 @@ void setup()
     pinMode(IN2, OUTPUT);
     pinMode(IN3, OUTPUT);
     pinMode(IN4, OUTPUT);
-    softPwmCreate(ENA, 0, 25.5);
-    softPwmCreate(ENB, 0, 25.5);
+    softPwmCreate(ENA, 0, 50);
+    softPwmCreate(ENB, 0, 50);
 }
 
 void loop()
 {
    cout << "Speed : " << speed << endl; 
-   softPwmWrite(ENA, speed * 0.1);
-   softPwmWrite(ENB, speed * 0.1);
-   delay(100);
-   if (speed == 255)
+   softPwmWrite(ENA, speed * 0.5);
+   softPwmWrite(ENB, speed * 0.5);
+   delay(15);
+   if (speed == 500)
    {
 	countUp = false;
    }
-   if (speed == 0)
+   if (speed == 200)
    {
 	countUp = true;	
    }
